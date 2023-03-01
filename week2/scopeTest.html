@@ -7,17 +7,31 @@
 <body>
     <script>
 
+        // x = 0 // dont do that
         let x = 0;
         function foo() {
+            // 1 var x;
+            // x = 1 // dont do that
             let x = 1;
             document.writeln(x);
+            // 1 x = 1;
+            // 1 = automatische aufteilung von var x = 1;
         }
         foo();
         document.writeln(x);
 
-        // document.writeln( id(id) === id);
-        // document.writeln( Konst(id)(undefined) === id);
-        // document.writeln( Kite(undefined)(id) === id);
+        const id = x => x;
+        const Konst = x => y => x;
+
+        //const Kite = x => y => y;
+        //const Kite = x => id
+        //const Kite = x => Konst(id)(x)
+        const Kite = Konst(id)
+
+        document.writeln( id(id) === id);
+        document.writeln( Konst(id)(undefined) === id);
+        document.writeln(Konst(id)(42) === id)
+        document.writeln( Kite(undefined)(id) === id);
 
     </script>
 </body>
