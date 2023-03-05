@@ -17,12 +17,12 @@ const snake = [
 ];
 const food = {x: 15, y: 15};
 
-function snakeEquals(a, b) { return a.x === b.x && a.y === b.y }
+const snakeEquals = (a, b) => a.x === b.x && a.y === b.y;
 
-function changeDirection(orientation) {
+const changeDirection = orientation => {
     const idx = orientation.indexOf(direction);
     direction = orientation[idx + 1];
-}
+};
 
 const nextBoard = () => {
     const maxX = 20;
@@ -83,8 +83,8 @@ const start = () => {
     }, 1000 / 5);
 }
 
-function fillBox(context, element) {
+const fillBox = (context, element) => {
     context.fillRect(element.x * 20 + 1, element.y * 20 + 1, 18, 18);
-}
+};
 
 

@@ -1,10 +1,9 @@
-
 const radius = 10;
-const ball = {x:20, y:0, dx: 5, dy: 1};
-let   old  = {x: ball.x, y: ball.y};
+const ball = {x: 20, y: 0, dx: 5, dy: 1};
+let old = {x: ball.x, y: ball.y};
 
 function start() {
-    const canvas  = document.getElementById("canvas");
+    const canvas = document.getElementById("canvas");
     const context = canvas.getContext("2d");
     context.fillStyle = "black";
 
@@ -28,7 +27,7 @@ function nextBoard() {
 }
 
 function display(context) {
-    context.clearRect(old.x - radius - 1 , old.y - radius -1 , 22, 22 );
+    context.clearRect(old.x - radius - 1, old.y - radius - 1, 22, 22);
     fillBox(context)
 }
 

@@ -3,37 +3,99 @@
 <head>
     <meta charset="UTF-8">
     <title>Scope Tests</title>
+    <h1 id="test"> hallo </h1>
 </head>
 <body>
-    <script>
+<script>
+    document.getElementById("test").innerHTML = "testli";
 
-        // x = 0 // dont do that
-        let x = 0;
-        function foo() {
-            // 1 var x;
-            // x = 1 // dont do that
-            let x = 1;
-            document.writeln(x);
-            // 1 x = 1;
-            // 1 = automatische aufteilung von var x = 1;
-        }
-        foo();
+    // const
+    /*
+    const greeting = {
+        message: "say Hi",
+        times: 4
+    }
+
+    greeting.message = "say Hello instead";
+    */
+
+    // let
+    /*
+    let greeting = "say Hi";
+    let times = 4;
+
+    if (times > 3) {
+        let hello = "say Hello instead";
+        console.log(hello);// "say Hello instead"
+    }
+    console.log(hello) // hello is not defined
+
+    let greeting = "say Hi";
+    let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+    */
+
+    // var
+    /*
+    var tester = "hey hi";
+
+    function newFunction() {
+        var hello = "hello";
+    }
+    console.log(hello); // error: hello is not defined
+
+    var greeter = "hey hi";
+    var greeter = "say Hello instead";
+
+    var greeter = "hey hi";
+    greeter = "say Hello instead";
+    document.writeln(greeter)
+
+    console.log (greeter2);
+    var greeter2 = "say hello"
+
+    var greeter;
+    console.log(greeter); // greeter is undefined
+    greeter = "say hello"
+
+
+    // x = 0 // dont do that
+    let x = 0;
+
+    function foo() {
+        // 1 var x;
+        // x = 1 // dont do that
+        let x = 1;
         document.writeln(x);
+        // 1 x = 1;
+        // 1 = automatische aufteilung von var x = 1;
+    }
 
-        const id = x => x;
-        const Konst = x => y => x;
+    foo();
+    document.writeln(x);
+     */
 
-        //const Kite = x => y => y;
-        //const Kite = x => id
-        //const Kite = x => Konst(id)(x)
-        const Kite = Konst(id)
+    // IIFE
+    /*
+    function test(){document.writeln("test1")}; test();
+    (function test2(){document.writeln("test2")})();
+    (function(){document.writeln("test3")})();
+    (() => {document.writeln("test4")})();
+     */
 
-        document.writeln( id(id) === id);
-        document.writeln( Konst(id)(undefined) === id);
-        document.writeln(Konst(id)(42) === id)
-        document.writeln( Kite(undefined)(id) === id);
+    const id = x => x;
+    const Konst = x => y => x;
 
-    </script>
+    //const Kite = x => y => y;
+    //const Kite = x => id
+    //const Kite = x => Konst(id)(x)
+    const Kite = Konst(id)
+
+    document.writeln(id(id) === id);
+    document.writeln(Konst(id)(undefined) === id);
+    document.writeln(Konst(id)(42) === id)
+    document.writeln(Kite(undefined)(id) === id);
+
+</script>
 </body>
 </html>
 
