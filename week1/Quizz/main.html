@@ -5,45 +5,209 @@
     <title>Title</title>
 </head>
 <body>
-
-</body>
-</html>
-
 <script>
-  const foo = () => true;
-  //document.writeln(foo(1));
-  // Annahme: true  Resultat: true
 
-  const foo2 = true;
-  //document.writeln(foo2());
-  // Annahme: false Resultat: false
+    // QUIZ 1 //
+    /*
+    const foo = () => true;
+    document.writeln(foo(1));
+    // Annahme: true  Resultat: true
 
-  function foo3(){
-      return true;
-  }
-  //document.writeln(foo3)
-  // Annahme: false Resultat: gibt funktionbody aus
+    //const foo2 = true;
+    //document.writeln(foo2());
+    // Annahme: false Resultat: foo2 is no function
 
-  const foo4 = (x) => true;
-  //document.writeln(foo4());
-  // Annahme: true  Resultat: true
+    //function foo3() {
+    //    return true;
+    //}
+    //document.writeln(foo3)
+    // Annahme: false Resultat: function foo3() { return true; }
 
-  const foo5 = () => true;
-  //document.writeln(foo5())
-  // Annahme: true  Resultat: true
+    const foo4 = (x) => true;
+    document.writeln(foo4());
+    // Annahme: true  Resultat: true
 
-  function foo6(){
-      return true;
-  }
-  //document.writeln(foo6());
-  /// Annahme: true  Resultat: true
+    const foo5 = () => true;
+    document.writeln(foo5())
+    // Annahme: true  Resultat: true
 
-  function foo7(){
-      true
-  }
-  //document.writeln(foo7());
-  // Annahme: false Resultat:undefined
+    function foo6() {
+        return true;
+    }
+    document.writeln(foo6());
+    /// Annahme: true  Resultat: true
+
+    function foo7() {
+        true
+    }
+    document.writeln(foo7());
+    // Annahme: false Resultat:undefined
+     */
+
+    // QUIZ 2 //
+    /*
+    function one(x){
+        return x;
+    }
+    function two(x,y){
+        return x + y;
+    }
+    function three(x,y,z){
+        return x + y + z;
+    }
+
+    const functions = [null, one, two, three];
+
+    document.writeln(functions[3](1,1));
+    document.writeln(functions[2](1,1,1));
+    document.writeln(functions[1](1));
+     */
+
+    // QUIZ 3A //
+    /*
+    function id(x){
+        return x;
+    }
+
+    const x_ = Math.random();
+    document.writeln(id(x_) === x_);
+     */
+
+    // QUIZ 3b //
+    /*
+    const plus = (a) => {
+        return (b) => {
+            return a + b;
+        }
+    }
+
+    const x_ = Math.random();
+    const y_ = Math.random();
+    const plus3 = plus(3);
+    document.writeln(plus(x_)(y_) === x_ + y_ && plus3(y_) === y_ + 3);
+     */
+
+    // QUIZ 4 //
+    /*function two() {
+        let x = 2;
+        return x;
+    }
+    try{
+        x;
+        document.writeln(true);
+    }catch (e){
+        document.writeln(false);
+    }*/
+
+    /*function two2(){
+        x = 2;
+        return x;
+    }
+    two2();
+    try{
+        x;
+        document.writeln(true)
+    } catch(e){
+        document.writeln(false);
+    }*/
+
+    /*let x = 0;
+    function two3(){
+        let x = 2;
+        return x;
+    }
+    two3();
+    try{
+        x;
+        document.writeln(x === 0)
+    } catch(e){
+        document.writeln(false);
+    }*/
+
+    /*let x = 0;
+    function two(){
+        x = 2;
+        return x;
+    }
+    two();
+
+    try{
+        x;
+        document.writeln(x === 0);
+    }catch (e){
+        document.writeln(false);
+    }*/
+
+    /*function two(){
+        x = 2;
+        return x;
+    }
+
+    try{
+        x;
+        document.writeln(true);
+    }catch (e){
+        document.writeln(false);
+    }
+     */
+
+    // QUIZ 5 //
+
+    /*let x = 0;
+    function two(){
+        let x = 2;
+        return x;
+    }();*/
+
+    /*x = 0;
+    ( () => {
+        x = 2;
+        return x;
+    })();*/
+
+    /*let x = 0;
+    (function(){
+        let x = 2;
+        return x;
+    })();*/
+
+    /*let x = 0;
+    function two(){
+        let x = 2;
+        return x;
+    }
+    two();*/
+
+    /*let x = 0;
+    ( () => {
+        let x = 2;
+        return x;
+    })();*/
+
+    /*let x = 0;
+    (function two(){
+        let x = 2;
+        return x;
+    })();
+
+    try{
+        document.writeln(x === 0);
+    }catch (e){
+        document.writeln(false);
+    }*/
+
+    // QUIZ 6 //
+    const id = x => x;
+    const konst = x => y => x;
+
+    const F1 = x => y => konst(id) (x) (y);
+
+    document.writeln(id(12));
+    document.writeln(konst(12)(4));
 
 
 
 </script>
+</body>
+</html>
+
