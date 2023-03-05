@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html><head></head><body>
+<html>
+<head></head>
+<body>
 
 <h1>Testing Snake</h1>
 
@@ -12,11 +14,11 @@
 let ok = [];
 
 // before start, snake is in start position
-ok.push(snakeEquals(snake[0] , {x: 10, y: 5} ));
+ok.push(snakeEquals(snake[0], {x: 10, y: 5}));
 
 // after one step, snake has moved up
 nextBoard();
-ok.push(snakeEquals(snake[0] , {x: 10, y: 4} ));
+ok.push(snakeEquals(snake[0], {x: 10, y: 4}));
 
 // before eating food, snake is of size 4
 ok.push(snake.length === 4);
@@ -38,15 +40,15 @@ changeDirection(countercw);
 ok.push(direction === north);
 
 // test result report
-if ( ok.every( elem => elem) ) {
-    document.writeln("All "+ ok.length +" tests ok.");
+if (ok.every(elem => elem)) {
+    document.writeln("All " + ok.length + " tests ok.");
 } else {
     document.writeln("Not all tests ok! Details:");
-    for (let i = 0; i<ok.length; i++) {
-        if(ok[i]) {
-            document.writeln("Test "+ i +" ok");
+    for (let i = 0; i < ok.length; i++) {
+        if (ok[i]) {
+            document.writeln("Test " + i + " ok");
         } else {
-            document.writeln("Test "+ i +" failed");
+            document.writeln("Test " + i + " failed");
         }
     }
 }
