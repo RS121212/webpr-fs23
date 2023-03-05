@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html>
+
+<script>
+  const foo = () => true;
+  //document.writeln(foo(1));
+  // Annahme: true  Resultat: true
+
+  const foo2 = true;
+  //document.writeln(foo2());
+  // Annahme: false Resultat: false
+
+  function foo3(){
+      return true;
+  }
+  //document.writeln(foo3)
+  // Annahme: false Resultat: gibt funktionbody aus
+
+  const foo4 = (x) => true;
+  //document.writeln(foo4());
+  // Annahme: true  Resultat: true
+
+  const foo5 = () => true;
+  //document.writeln(foo5())
+  // Annahme: true  Resultat: true
+
+  function foo6(){
+      return true;
+  }
+  //document.writeln(foo6());
+  /// Annahme: true  Resultat: true
+
+  function foo7(){
+      true
+  }
+  //document.writeln(foo7());
+  // Annahme: false Resultat:undefined
+
+
+
+</script>
