@@ -22,7 +22,7 @@ const snakeEquals = (a, b) => a.x === b.x && a.y === b.y;
 const changeDirection = orientation => {
     const idx = orientation.indexOf(direction);
     direction = orientation[idx + 1];
-};
+}
 
 const nextBoard = () => {
     const maxX = 20;
@@ -48,11 +48,12 @@ const nextBoard = () => {
     }
 
     snake.unshift(head); // put head at front of the list
-}
+};
 
 const display = context => {
     // clear
     context.fillStyle = "black";
+    // const canvas = document.getElementById("canvas");
     context.fillRect(0, 0, canvas.width, canvas.height);
     // draw all elements
     context.fillStyle = "cyan";
@@ -71,7 +72,7 @@ const start = () => {
     const context = canvas.getContext("2d");
 
     const rightArrow = 39;
-    const leftArrow  = 37;
+    // const leftArrow  = 37; // just in case we need this later
     window.onkeydown = evt => {
         const orientation = (evt.keyCode === rightArrow) ? clockwise : countercw;
         changeDirection(orientation);
@@ -81,7 +82,7 @@ const start = () => {
         nextBoard();
         display(context);
     }, 1000 / 5);
-}
+};
 
 const fillBox = (context, element) => {
     context.fillRect(element.x * 20 + 1, element.y * 20 + 1, 18, 18);
