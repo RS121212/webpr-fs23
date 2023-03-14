@@ -18,6 +18,7 @@
     };
 
     // starting state
+<<<<<<< HEAD
     /*const logAll = () => {
         console.error("error", longRunning("error"));
         console.warn ("warn",  longRunning("warn") );
@@ -25,6 +26,15 @@
         console.log  ("log",   longRunning("log")  );
         console.debug("debug", longRunning("debug"));
     }*/
+=======
+    // const logAll = () => {
+    //     console.error("error", longRunning("error"));
+    //     console.warn ("warn",  longRunning("warn") );
+    //     console.info ("info",  longRunning("info") );
+    //     console.log  ("log",   longRunning("log")  );
+    //     console.debug("debug", longRunning("debug"));
+    // }
+>>>>>>> 3a3d13aa3fd2050a121a6e7157e99bb99c82bada
 
     /* constants */
     const LEVEL_NONE    = -1;
@@ -34,8 +44,13 @@
     const LEVEL_LOG     =  3;
     const LEVEL_DEBUG   =  4;
     let logLevel = LEVEL_NONE;
+<<<<<<< HEAD
 
 
+=======
+
+
+>>>>>>> 3a3d13aa3fd2050a121a6e7157e99bb99c82bada
 /*    // strict version (not working as desired, yet)*/
     const error = argsF => { if (logLevel >= LEVEL_ERROR) console.error(argsF()); }
     const warn  = argsF => { if (logLevel >= LEVEL_WARN)  console.warn (argsF()); }
@@ -44,6 +59,7 @@
     const debug = argsF => { if (logLevel >= LEVEL_DEBUG) console.debug(argsF()); }
 
     const logAll = () => {
+<<<<<<< HEAD
         error(()=>longRunning("warn") );
         info (()=>longRunning("info") );
         log  (()=>longRunning("log")  );
@@ -53,6 +69,15 @@
     // Log Level in Console ändern
     //logLevel = LEVEL_DEBUG
 
+=======
+        error(() => longRunning("error"));
+        warn (() => longRunning("warn") );
+        info (() => longRunning("info") );
+        log  (() => longRunning("log")  );
+        debug(() => longRunning("debug"));
+    }
+
+>>>>>>> 3a3d13aa3fd2050a121a6e7157e99bb99c82bada
 
 </script>
 </pre>
