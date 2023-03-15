@@ -197,29 +197,55 @@
     }*/
 
     // QUIZ 6 //
-    /*const id = x => x;
-    const konst = x => y => x;
+    /*
+    const id = y => y;
+    const fst = x => y => x;
 
-    const F1 = x => y => konst(id) (x) (y);
+    //const snd = x => y => y;
+    const snd = fst(id);
+    // y => y => y
 
-    document.writeln(id(12));
-    document.writeln(konst(12)(4));*/
+    const x_ = Math.random();
+    const y_ = Math.random();
+    document.writeln(snd(x_)(y_) === y_);
+    document.writeln(snd(x_)(y_));
+    document.writeln(y_);
+    */
 
     // QUIZ 7 //
+    /*
+    const id = x => x;
+    const konst = x => y => x;
+    const brb = x => y => y;
+
+    const T = konst;
+    const F = brb;
+
+     */
+
     // 1 //
     /*
     const pair = a => b => f => f(a)(b);
     const fst = p => p(T);
     const snd = p => p(F);
 
-    const pairEq = a =>b =>fst(a) === fst(b) && snd(a) === snd(b);
+    const pairEq = a => b =>fst(a) === fst(b) && snd(a) === snd(b);
     const pairPlus = a => b => pair(fst(a) + fst(b)) (snd(a) + snd(b));
 
     const oneTwo = pair(1)(2);
     const sum = pairPlus(oneTwo)(oneTwo);
 
-    document.writeln(pairEq(sum)(pair(2)(4)));*/
+    document.writeln(fst(oneTwo));
+    // f => f(a)(b)
+    // f => f(a)(b)(x=>y=>x)
+    // x => y => x(a)(b)
 
+    // f => f(a)(b)
+    // f => f(a)(b)(x=>y=>y)
+    // x=>y=>y(a)(b)
+
+    //document.writeln(pairEq(sum)(pair(2)(4)));
+    */
     // 2 //
     /*
     const pair = a => b => f => f(a)(b);
@@ -257,13 +283,13 @@
     const fst = p => p(T);
     const snd = p => p(F);
 
-    const pairEq = a => b => fst(a) && snd(a) === snd(b);
+    const pairEq = a => b => fst(a)=== fst(b) && snd(a) === snd(b);
 
     const pairMap = f => p => pair (f(fst(p))) (f(snd(p)));
 
     const oneTwo = pair(1)(2);
     const square = x => x * x;
-    const result  pairMap(square)(oneTwo);
+    const result =  pairMap(square)(oneTwo);
 
     document.writeln(pairEq(result)(pair(1)(4)));
     */
@@ -281,16 +307,28 @@
     const c = t => t(s3);
 
     const person = triple;
+    //document.writeln(person)          x => y => z => f => f(x)(y)(z)
     const firstname = a;
+    //document.writeln(firstname);      t => t(s1)
     const lastname = b;
+    //document.writeln(lastname);       t => t(s2)
     const age = c;
+    //document.writeln(age);            t => t(s3)
 
     const bran = person("Brendan");
+    //document.writeln(bran);           y => z => f => f(x)(y)(z)
     const raven = bran("Stark")(16);
+    //document.writeln(raven);          f => f(x)(y)(z)
     const eich = bran("Eich")(50);
+    //document.writeln(eich);           f => f(x)(y)(z)
 
     document.writeln(firstname(bran) === "Brendan");
-     */
+    //document.writeln(firstname(bran));  z => f => f(x)(y)(z)
+    // y=> f => f(x)(y)(z)(x => y => z => y)
+    // y=> f => f(x)(y)(z)(y)
+    // y=> f => f(x)(y)(z)
+    */
+
 
     // 2 //
     /*
@@ -304,6 +342,7 @@
     const c = t => t(s3);
 
     const oneTwoThree = triple(1);
+    document.writeln(oneTwoThree); // y => z => f => f(x)(y)(z)
 
     document.writeln(a(oneTwoThree) === 1);
     */
@@ -383,7 +422,7 @@
     const result = safeDiv(1)(1);
 
     either(result)
-        (msq => document.writeln(msg))
+        (msg => document.writeln(msg))
         (val => document.writeln(val === 1));
     */
     // 2 //
@@ -400,7 +439,7 @@
     const result = safeDiv(1)(0);
 
     either(result)
-        (msq => document.writeln(msg))
+        (msg => document.writeln(msg))
         (val => document.writeln(val === 1));
      */
 
@@ -418,9 +457,8 @@
     const result = safeDiv(1)(1);
 
     either(result)
-        (msq => document.writeln(msg))
+        (msg => document.writeln(msg))
     */
-
     // 4 //
     /*
     const Left = x => f => g => f(x);
@@ -435,8 +473,8 @@
     const result = safeDiv(1)(0);
 
     either(result)
-        (msq => document.writeln(msg))
-     */
+        (msg => document.writeln(msg))
+    */
 
     // 5 //
     /*
@@ -454,6 +492,31 @@
     either(result)
         (msq => document.writeln(msg))
      */
+
+    // QUIZ 9c //
+
+    const Left = x => f => g => f(x);
+    const Right = x => f => g => g(x);
+    const either = e => f => g => e(f)(g)
+    const id = x =>x;
+
+    const x_ = Math.random();
+    const safeDiv = num => divisor =>
+        divisor === 0
+            ? Left ("Cannot divide by 0")
+            : Right (num/divisor);
+
+    const eShow = x => either(x)
+        (msg => msg)
+        (val => "Result is: "+val);
+
+    //eShow(safeDiv(1)(0));
+    //eShow(safeDiv(x_)(1));
+
+    console.log(eShow(safeDiv(1)(0)));
+
+    document.writeln(eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)(1)) === "Result is: "+x_);
+
 </script>
 </body>
 </html>

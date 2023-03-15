@@ -16,7 +16,11 @@
         times: 4
     }
 
+    console.log(greeting.message);
+
     greeting.message = "say Hello instead";
+
+    console.log(greeting.message);
     */
 
     // let
@@ -27,11 +31,12 @@
     if (times > 3) {
         let hello = "say Hello instead";
         console.log(hello);// "say Hello instead"
+        console.log(greeting);
     }
     console.log(hello) // hello is not defined
 
-    let greeting = "say Hi";
-    let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
+    //let greeting = "say Hi"; // error: Identifier 'greeting' has already been declared
+    //let greeting = "say Hello instead"; // error: Identifier 'greeting' has already been declared
     */
 
     // var
@@ -81,19 +86,32 @@
     (function(){document.writeln("test3")})();
     (() => {document.writeln("test4")})();
      */
-
+    /*
     const id = x => x;
     const Konst = x => y => x;
+    const triple = x => y => z => z;
+
+    document.writeln(id(23));
+    document.writeln(Konst(5)(10));
+    document.writeln(triple(5)(10)(30));
 
     //const Kite = x => y => y;
     //const Kite = x => id
     //const Kite = x => Konst(id)(x)
     const Kite = Konst(id)
 
-    document.writeln(id(id) === id);
-    document.writeln(Konst(id)(undefined) === id);
-    document.writeln(Konst(id)(42) === id)
-    document.writeln(Kite(undefined)(id) === id);
+    document.writeln(Kite(4)(8));
+    */
+    const id = x => x;
+    const Konst = x => y => x;
+    const F1 = x => y => Konst(id)(x)(y);
+    const F2 = x => Konst(id)(x)
+    // y=>x=>x
+    //
+
+    document.writeln(F1(1)(2));
+    document.writeln(F2(1)(4));
+
 </script>
 </body>
 </html>
