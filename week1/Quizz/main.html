@@ -494,7 +494,6 @@
      */
 
     // QUIZ 9c //
-
     // const Left = x => f => g => f(x);
     // const Right = x => f => g => g(x);
     // const either = e => f => g => e(f)(g)
@@ -517,6 +516,32 @@
     //
     // document.writeln(eShow(safeDiv(1)(0)) === "Cannot divide by 0" && eShow(safeDiv(x_)(1)) === "Result is: "+x_);
 
+    // QUIZ 9d //
+    /*
+    //const multi = x => y => x * y;
+    //const twice2 = multi(2);
+    const twice = x => 2 * x;
+
+    document.writeln([1,2,3].map(twice).toString() === "2,4,6");
+    */
+
+    // QUIZ 9e //
+    /*
+    //const divides2 = x => y => {if(y%x === 0) return y};
+    const divides = x => y => y % x === 0;
+
+    document.writeln([1,2,3,4,5,6].filter(divides(3)).toString() === "3,6");
+    document.writeln([1,2,3,4,5,6].filter(divides(3)).toString());
+    */
+
+    // QUIZ 9f //
+
+    // const join = x => (accu,cur) => accu + x + cur;
+    //
+    // document.writeln([1,2,3].reduce(join('-')) === "1-2-3");
+    // document.writeln([1,2,3].reduce(join('-'),4));
+
+
     // quiz 10 a //
     // const factor_ = 0.3;
     // const bonusFormula = `employee.bonus = employee.revenue * ${factor_}`;
@@ -527,12 +552,13 @@
     // document.writeln(e.bonus === e.revenue * factor_);
 
     // QUIZ 10 b //
-    const bonusFormula = 'employee.revenue * 0.2';
-    const bonusCalculation = Function(`employee`,`return employee.bonus = ${bonusFormula}`);
+    // const bonusFormula = 'employee.revenue * 0.2';
+    // const bonusCalculation = Function(`employee`,`return employee.bonus = ${bonusFormula}`);
+    //
+    // const e = {revenue: 1000, bonus: null};
+    // bonusCalculation(e);
+    // document.writeln(e.bonus === e.revenue * 0.2);
 
-    const e = {revenue: 1000, bonus: null};
-    bonusCalculation(e);
-    document.writeln(e.bonus === e.revenue * 0.2);
 </script>
 </body>
 </html>
