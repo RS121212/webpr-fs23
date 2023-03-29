@@ -8,7 +8,7 @@ function start() {
     const userFunction = document.getElementById('user_function');
     const canvas       = document.getElementById('canvas');
 
-    const f = () => Function("x","return " + userFunction.value + ";");
+    const f = () => Function("x", "return " + userFunction.value + ";");
     const update = () => display(canvas, f());
 
     userFunction.onchange = update;
