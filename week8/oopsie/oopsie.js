@@ -1,4 +1,4 @@
-// Todo:
+// Todo: jsdoc the Player type
 
 // create a proper Player construction with
 // state:
@@ -11,12 +11,13 @@
 // 
 
 
-const Player = name => {
+const Player = name => {  // name must be either "Dierk" or "Florian"
     let fallbackIndex = 0;
     let progressIndex = 0;
     return {
         getFallbackIndex : () => fallbackIndex,
         getProgressIndex : () => progressIndex,
+        getName          : () => name,
         proceed          : stride => progressIndex += stride,
         turn             : () => fallbackIndex = progressIndex,
         fallback         : () => progressIndex = fallbackIndex
@@ -36,8 +37,8 @@ function start() {
 }
 
 function dice() {
-    const stride                              = Math.round(1 + Math.random() * 5);
-    document.getElementById('dice').innerText = ""+ stride;
+    const stride = Math.round(1 + Math.random() * 5);
+    document.getElementById('dice').textContent = ""+ stride;
     if (stride === 3) {
         player.fallback();
     } else {
