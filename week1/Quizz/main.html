@@ -750,10 +750,233 @@
     // document.writeln(handle (() => [1]).length === 1)
     //
 
-    // Quiz 14 a //
-    Array.prototype.eq = function (){
+    // Quiz Q13 //
 
-    }
+    // function Empty(){}
+    // const empty = new Empty();
+    // Empty.prototype.answer = 42;
+    // document.writeln(empty.answer === 42);
+
+    // const Empty = ( () => {
+    //     function Empty(){}
+    //     return Empty;
+    // }) ();
+    // const empty = Empty;
+    // document.writeln(empty instanceof Empty);
+
+    // const Empty = ( () => {
+    //     function Empty(){}
+    //     return Empty;
+    // }) ();
+    // const empty = new Empty;
+    // document.writeln(empty instanceof Empty);
+
+    // const Empty = ( () => {
+    //     function Empty(){}
+    //     return Empty;
+    // }) ();
+    // const empty = new Empty;
+    // const also = new Empty;
+    // Empty.prototype.answer = 42;
+    // document.writeln(empty.answer === 42 && also.answer === 42);
+
+    // QUIZ 14 //
+
+    // const Person = name => {
+    //     let age = 0;
+    //     return{
+    //         getAge: () =>age,
+    //         setAge: newAge => age = newAge,
+    //         getName: () => name,
+    //         setName: newName => name = newName
+    //     }
+    // };
+    // const me = Person("Myself");
+    // me.age = 50;
+    // document.writeln(me.getAge() == 50);
+
+    // const Person = name =>{
+    //     let age = 0;
+    //     return{
+    //         getAge: () => age,
+    //         setAge: newAge => age = newAge,
+    //         getName: () => name,
+    //         setName: newName => name = newName
+    //     }
+    // };
+    // const me = Person("Myself");
+    // me.setName("Sherlock");
+    // document.writeln(me.getName() === "Sherlock");
+
+    // const Person = name => {
+    //     let age = 0;
+    //     return{
+    //         getAge: () => age,
+    //         setAge: newAge => age = newAge,
+    //         getName: () => name,
+    //         setName: newName => name = newName
+    //     }
+    // };
+    // const me = Person("Myself");
+    // me.setAge(50);
+    // document.writeln(me.getAge() === 50);
+
+    // const Person = name => {
+    //     let age=0;
+    //     return{
+    //         getAge: () => age,
+    //         setAge: newAge => age = newAge,
+    //         getName: () => name,
+    //         setName: newName => name = newName
+    //     }
+    // };
+    // const me = Person("Myself");
+    // me.name = "***";
+    // document.writeln(me.getName() === "***");
+
+    // class Person{
+    //     constructor(name) {
+    //     }
+    //     isCool(){return this.name.length > 3};
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool(){return this.name.length > 3};
+    // }
+    // const p = new Person("Joe");
+    // p.prototype.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     isCool(){return this.name.length > 3}
+    // }
+    // const p = new Person();
+    // p.name = "Dierk";
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool(){return this.name.length > 3};
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool(){return this.name.length > 3};
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p.name === "Dierk");
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() {return this.name.length > 3};
+    // }
+    // const p = new Person("Dierk");
+    // const joe = {
+    //     name: "joe",
+    //     cool: p.isCool()
+    // };
+    // document.writeln(joe.cool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name
+    //     }
+    //     isCool() { return name === "Dierk"};
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name
+    //     }
+    //     isCool() { return this.name.length > 3};
+    // }
+    // const p = new Person("Joe");
+    // p.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool(){return this.name.length > 3};
+    // }
+    // const p = new Person("Joe");
+    // Person.prototype.isCool = () => true;
+    // document.writeln(p.isCool());
+
+    // QUIZ 16 //
+    // class Person{
+    //
+    // }
+    // const p = {};
+    // Object.setPrototypeOf(p, Poerson);
+    // document.writeln(p instanceof  Person);
+
+    // class Person{}
+    // class Student extends Person{}
+    // const s = new Student();
+    // document.writeln(s instanceof  Person);
+
+    // class Person {}
+    // class Student{}
+    // const s = new Student();
+    // Object.setPrototypeOf(s, Student.prototype);
+    // document.writeln(s instanceof Person);
+
+    // class Person{}
+    // class Student {}
+    // const s = new Student();
+    // Object.setPrototypeOf(s, Person.prototype);
+    // document.writeln(s instanceof Student);
+
+    // class Person{
+    //     constructor(name) {
+    //         this.name = name;
+    //     }
+    //     isCool() { return this.name.name > 3}
+    // }
+    // const p = new Person("Dierk");
+    // document.writeln(p instanceof  Person)
+
+    // class Person{
+    //
+    // }
+    // const p = {};
+    // Object.setPrototypeOf(p, Person.prototype);
+    // document.writeln(p instanceof Person);
+
+    // class Person{}
+    // class Student{}
+    // const s = new Student();
+    // Object.setPrototypeOf(Student, Person);
+    // document.writeln(s instanceof Person);
+
+    // class Person{}
+    // class Student extends Person{}
+    // const s = new Student();
+    // document.writeln(s instanceof Student);
+
+    // class Person {}
+    // class Student{}
+    // const s = new Student();
+    // Object.setPrototypeOf(Student.prototype, Person.prototype);
+    // document.writeln(s instanceof  Person);
+
 </script>
 </body>
 </html>
