@@ -977,6 +977,78 @@
     // Object.setPrototypeOf(Student.prototype, Person.prototype);
     // document.writeln(s instanceof  Person);
 
+    // Quiz 30 //
+    // const idPromise = x => new Promise(resolve => resolve(x));
+    //
+    // idPromise(1)
+    //     .then(it => {document.writeln(it);return it})
+    //     .then(it => document.writeln(it));
+
+    // const idPromise = x => new Promise(resolve => resolve(x));
+    //
+    // document.writeln(idPromise(1));
+
+    // const idPromise = x => new Promise (resolve => resolve(x));
+    //
+    // idPromise(1)
+    //     .then(it => document.writeln(it));
+
+    // const idPromise = x => new Promise(resolve => resolve(x));
+    //
+    // idPromise(1)
+    //     .then(it => document.writeln(it))
+    //     .then(it => document.writeln(it));
+
+    // Quiz 28 //
+    // function handle(callback){
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    //
+    // document.writeln(handle(it => it.push(1)).length === 1)
+
+    // function handle(callback){
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    //
+    // document.writeln(handle(it.push(1)).length === 1)
+
+    // function handle(callback){
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    //
+    // document.writeln(handle(() => it.push(1)).length === 1)
+
+    // function handle(callback){
+    //     const result = [];
+    //     callback(result);
+    //     return result;
+    // }
+    //
+    // let it= [];
+    // document.writeln(handle(it => it.push(1)).length === 1)
+
+    // Quiz 21 //
+    // const list = ['a','bb','ccc','dddd'];
+    // const result = list.reduce(count => ++count,0);
+    // document.writeln(result === list.length)
+
+    // const list = ['a', 'bb','ccc','dddd'];
+    // const result = list.reduce((count, str) => ++count,0);
+    // document.writeln(result === list.length)
+
+    // const list = ['a','bb', 'ccc','dddd'];
+    // const result = list.reduce(count => count++,0);
+    // document.writeln(result === list.length)
+
+    const list = ['a','bb', 'ccc','dddd'];
+    const result = list.reduce(count => ++count);
+    document.writeln(result === list.length)
 </script>
 </body>
 </html>
